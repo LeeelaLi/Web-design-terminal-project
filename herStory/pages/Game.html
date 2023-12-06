@@ -1,0 +1,125 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <!--  tells the browser to use the utf-8 character encoding. -->
+    <meta charset="UTF-8">
+    <!--  This defines the title of this website.  -->
+    <title>Game</title>
+    <!-- link tag for styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- This is for using fa-solid icons in this website. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- This defines the web page icon that represents this website. -->
+    <link rel="icon" type="image/404-icon" href="../img/svg/game.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js" ></script>
+    
+</head> 
+
+<body> 
+
+  <nav>
+  </nav>
+
+  <main>
+
+    <div class="main-container">
+
+      <!-- -------------------Main Left Start------------------- -->
+      <div class="main-left">
+      
+          <!-- .......Aside Bar Start....... -->
+          <aside>
+            <div class="logo">
+              <h2><span>her</span><b>Story</b></h2>
+            </div>
+
+            <a class="menu-item"  href="../index.html">
+              <img src="../images/svg/logo.png" alt="">
+              <p>Home</p>
+            </a>
+
+            <a class="menu-item active" id="game" href="./Game.html">
+              <img src="../images/svg/game.png" alt="">
+              <p>Cat Talk Game</p>
+            </a>
+
+            <a class="menu-item" href="./Join.html">
+              <img src="../images/svg/submit.png" alt="">
+              <p>Join us</p>
+            </a>
+
+          </aside>
+          <!-- .......Aside Bar End......... -->
+      </div>
+
+      <!-- -------------------Main Middle Start------------------- -->
+      <div class="main-middle">
+          <div id="output"><p>Don't click me.<br>I can't talk.</p></div>
+          <button id="button"><img src="../images/img/card-cat-mystery.png" alt=""></button>
+          <div class="card">
+            <div class="wrapper">
+              <img src="../images/img/card-cowcat.png" class="cover-image" alt="cowcat">
+            </div>
+            <p>This is cow cat.</p>
+            <img src="../images/img/card-cat-cow.png" class="character" alt="game">
+          </div>
+          <div class="card">
+            <div class="wrapper">
+              <img src="../images/img/card-gingercat.png" class="cover-image" alt="cowcat">
+            </div>
+            <p>This is ginger cat.</p>
+            <img src="../images/img/card-cat-ginger.png" class="character" alt="game">
+          </div>
+          <div class="card">
+            <div class="wrapper">
+              <img src="../images/img/card-siamcat.png" class="cover-image" alt="cowcat">
+            </div>
+            <p>This is siamese cat.</p>
+            <img src="../images/img/card-cat-siam.png" class="character" alt="game">
+          </div>
+          <div class="card">
+            <div class="wrapper">
+              <img src="../images/img/card-blackcat.png" class="cover-image" alt="cowcat">
+            </div>
+            <p>This is a mystery.</p>
+            <img src="../images/img/card-cat-black.png" class="character" alt="game">
+          </div>
+      </div>
+
+      <!-- -------------------Main Right Start------------------- -->
+      <div class="main-right">               
+        <button class="theme-toggle">
+          <img src="../images/svg/bulk.png"  alt="">
+        </button>
+
+      <div class="headline">
+        <p data-value="THIS IS A SWITCH">THIS IS A SWITCH</p>
+      </div>
+      <div class="right">
+        <form role="search" id="searchbar" class="search-bar">
+          <input type="search" placeholder="Search..." id="message-search" aria-label="Search through google">
+        </form>
+      <!-- callout box-->
+      <div class="callout">
+        <div class="callout-header">
+          <h3>Tips</h3>
+        </div>
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+        <div class="callout-container">
+          <p>Delia Derbyshire (1937- 2001) has been referred to as "the unsung sheroine of British electronic music".</p>
+          <button type="button" onclick="alert('Delia Derbyshire (1937- 2001) created the arrangement of the theme music for UK science-fiction TV series Doctor Who.')"><p>Translate</p></button>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+</main>
+  
+  <div class="foot">
+      <p>&copy; text and icon sources: made it myself</p> 
+  </div>
+  <script src="../js/style.js"></script>
+</body>
+</html>

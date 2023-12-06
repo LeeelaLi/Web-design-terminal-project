@@ -1,0 +1,141 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1. 0">
+    <title>Sign up</title>
+    <!-- --------------Custom CSS LINK-------------- -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- -----------Font Awesome Icon LINK------------- -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- -------------Swiper Slider Link--------------- -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+        />
+    <link rel="icon" type="image/404-icon" href="../images/svg/submit.png">
+    
+    
+</head> 
+<body> 
+
+<nav>
+</nav>
+
+    <!-- ===================Start Main Section=================== -->
+<main>
+  <div class="main-container">
+    <div class="main-left">
+    
+        <!-- .......Aside Bar Start....... -->
+        <aside>
+          <div class="logo">
+            <h2><span>her</span><b>Story</b></h2>
+        </div>
+        
+          <a class="menu-item"  href="../index.html">
+              <img src="../images/svg/logo.png" alt="">
+              <p>Home</p>
+            </a>
+
+            <a class="menu-item" id="game" href="./Game.html">
+              <img src="../images/svg/game.png" alt="">
+              <p>Cat Talk Game</p>
+            </a>
+
+            <a class="menu-item active" href="./Join.html">
+              <img src="../images/svg/submit.png" alt="">
+              <p>Join us</p>
+            </a>
+
+        </aside>
+        <!-- .......Aside Bar End......... -->
+    </div>
+
+    <!-- -------------------Main Middle Start------------------- -->
+    <div class="main-middle">
+      <form class="form-structor" action="../pages/Submit.html">
+          <div class="signup">
+            <h2>Join us</h2>
+            <div class="form-holder">
+              <input type="text" class="input" placeholder="Name*" minlength="3" maxlength="20" required>
+              <input type="email" class="input" placeholder="Email*" required>
+              <input type="tel" class="input" placeholder="Phone number" minlength="10" maxlength="10" >
+              <div class="chromo">
+                <label for="chromo01" id="chr">Your chromosome*</label>
+                <input id="chromo01" type="radio" name="chromo" value="x" required>X
+                <input type="radio" name="chromo" value="y">Y
+              </div>
+              <select name="position" id="position" required>
+                <option value="">Which topic are you interest in*</option>
+                <option value="stun">#Tech</option>
+                <option value="poli">#Life</option>
+                <option value="mgodness">#Food</option>
+                <option value="taster">#Fun</option>
+                <option value="sleep">#Work</option>
+              </select>
+              <select id="hair" name="hair">
+                <option value="">Your favorite cat(optional)</option>
+                <option value="cow">Cow</option>
+                <option value="ginger">Ginger</option>
+                <option value="siam">Siam</option>
+                <option value="black">Black</option>
+                <option value="white">White</option>
+                <option value="blue">Blue</option>
+                <option value="torto">Tortoiseshell</option>
+                <option value="tri">Triple</option>
+                <option value="other">Other</option>
+            </select>
+              <textarea placeholder="Your comment" id="comment" name="comment" cols="50" rows="5"></textarea>
+            </div>
+            
+            <div class="Terms">
+              <input type="checkbox" name="term" required>*I agree to the terms of your website.<br>
+              <input type="checkbox" name="term">I would like to be notified of any relevant positions.
+            </div> 
+            <button class="submit-btn">Submit</button>
+          </div>
+      <form>
+     
+    </div>
+
+    <!-- -------------------Main Right Start------------------- -->
+    <div class="main-right">               
+      <button class="theme-toggle">
+        <img src="../images/svg/bulk.png"  alt="">
+      </button>
+      <div class="headline">
+        <p data-value="THIS IS A SWITCH">THIS IS A SWITCH</p>
+      </div>
+      <div class="right">
+        <div role="search" id="searchbar" class="search-bar">
+          <input type="search" id="message-search" placeholder="Search..." aria-label="Search through google">
+        </div>
+        <!-- callout box-->
+        <div class="callout">
+          <div class="callout-header">
+            <h3>Tips</h3>
+          </div>
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+          <div class="callout-container">
+            <p>王贞仪（1768-1797）掌握了三角学并写了一篇文章《勾股定理与三角学的解释》。</p>
+            <button type="button" onclick="alert('Wang Zhenyi (1768-1797) mastered trigonometry and wrote an article The Pythagorean Theorem and the Explanation of Trigonometry.')"><p>Translate</p></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+</main>
+            <!-- ......footer menu......-->
+            <div class="foot">
+                <p>&copy; text and icon sources: made it myself</p> 
+            </div>
+
+    <!-- -------------Swiper JS LINK--------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <!-- -------------Custom JS LINK--------------- -->
+    <script src="../js/style.js"></script>
+
+</body>
+</html>
