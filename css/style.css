@@ -1,0 +1,664 @@
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+/*=========== Import and define the fonts ==========*/
+/*https://www.1001fonts.com/pixel-fonts.html?page=3*/
+/*machine font*/
+@font-face {
+  font-family: myFirstFont01;
+  src: url(../fonts/UASQUARE.TTF);
+}
+/*https://www.1001fonts.com/glacial-indifference-font.html*/
+/*regular font*/
+@font-face {
+  font-family: myFirstFont02;
+  src: url(../fonts/GlacialIndifference-Regular.otf);
+}
+/*https://www.1001fonts.com/zector-font.html*/
+/*font*/
+@font-face {
+  font-family: myFirstFont03;
+  src: url(../fonts/Zector.ttf);
+}
+
+/*=========== Style animations ==========*/
+/*fade down animation*/
+@keyframes fade-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+/*content section animation*/
+@keyframes fadeInScale {
+  0%   { opacity: 0; transform:translateY(30px); }
+  100% { opacity: 1; transform:translateY(0px); }
+}
+
+/*=========== Custom style ===========*/
+:root {
+  --color-white: hsl(252, 30%, 100%);
+  --color-light: hsl(190, 5%, 90%);
+  --color-primary: hsl(260, 38%, 63%);
+  --color-dark: hsl(220, 29%, 24%);
+  --color-black: hsl(252, 30%, 8%);
+  --color-gray: #757575;
+
+  --border-radius: .5rem;
+  --border-radius-avatar: 50%;
+
+  --small-fonts: 1.2vw;
+  --medium-fonts: 1.6vw;
+
+  --icon-size: 4vw;
+  --avatar-size: 3vw;
+  --tag-icon-size: 2.2vw;
+
+  --small-rem: 18vw;
+  --medium-rem: 20vw;
+  --large-rem: 25vw;
+}
+body {
+  color: var(--color-dark);
+  flex-direction: column;
+  font-family: myFirstFont02;
+  background-image: url("../images/img/background_lightmode.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+}
+html {
+  font-size: var(--small-fonts);
+}
+img {
+  display: block;
+  width: 100%;
+}
+
+/* dark-mode */
+.dark-mode{
+  --color-light: hsl(0, 0%, 15%);
+  --color-white:hsl(0, 0%, 28%);
+  --color-dark: hsl(300, 6%, 90%);
+  --color-primary: rgb(53, 253, 163);
+  transition: transform 0.8s cubic-bezier(0.86, 0, 0.07, 1);
+  background-image: url("../images/img/background_darkmode.png");
+}
+.dark-mode .logo img, .dark-mode .menu-item img, .dark-mode .title img {
+  filter: invert(10) sepia(0) saturate(0) hue-rotate(0deg);
+}
+
+/* ================== Main Section==================*/
+.main-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ----------------Main Left---------------- */
+.main-left {
+  position: absolute;
+  width: 15%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  float: left; 
+}
+/*logo icon*/
+.logo {
+  position: absolute;
+  left: 51%;
+  top: -2.2rem;
+}
+.logo img{
+  width: var(--icon-size);
+  border-radius: var(--border-radius-avatar);
+}
+
+/*page icons*/
+.menu-item {
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  height: 3.5rem;
+  width: 10rem;
+  margin: .5rem;
+  top: 1rem;
+  left: .5rem;
+  letter-spacing: .1rem;
+  text-align: center;
+  color: var(--color-dark);
+}
+.menu-item img {
+  width: var(--icon-size);
+  display: block;
+  margin:auto;
+}
+.menu-tag {
+  position: absolute;
+  left: 8rem;
+  top: 4rem;
+}
+.menu-item span{
+  color: var(--color-dark);
+}
+.active {
+  color: var(--color-primary);
+}
+
+/* ---------------- Main Middle ---------------- */
+.main-middle {
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  left: 16%;
+  float: left;
+  z-index: -1;
+}
+
+/*............. Style the Forum page .............*/
+.tab_container {
+  top: 2rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  left: 0;
+  box-shadow: 0px 20px 30px -10px rgba(158, 158, 158, 0.75);
+}
+.search-bar input{
+  height: 2.5rem;
+  text-align: center;
+  position: absolute;
+  width: var(--large-rem);
+  right: 0rem;
+  top: 2.5vw;
+  color: var(--color-dark);
+  font-size: var(--small-fonts);
+  display: block;
+  background-color: transparent;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.search-bar ::placeholder {
+  color: var(--color-gray);
+}
+
+.tab_container input, .tab_container .tab-content {
+  clear: both;
+  padding-top: 10px;
+  display: none;
+}
+
+#tab-label-1, #tab-label-2, #tab-label-3{
+  display: block;
+  float: left;
+  width: 15%;
+  padding: 1em;
+  height: 6rem;
+  color: var(--color-gray);
+  text-decoration: none;
+  text-align: center;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3 {
+  display: block;
+  padding: 20px;
+  background: white !important;
+  color: var(--color-gray);
+}
+
+.tab_container .tab-content .subforum,
+.tab_container .tab-content .gallery,
+.tab_container .tab-content .posts,
+.tab_container .tab-content .term-condition {
+  animation: fadeInScale 0.5s ease-in-out;
+  color: var(--color-gray);
+}
+
+.tab_container [id^="tab"]:checked + label {
+  background: white !important;
+  box-shadow: inset 0 2.5px var(--color-primary);
+}
+
+.tab_container label{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.tab-content {
+  position: absolute;
+  width: 100%;
+  top: 3rem;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  box-shadow: 0px 15px 10px -10px rgba(158, 158, 158, 0.75);
+}
+
+#content1, #content2, #content3 {
+  height: 42vw;
+  transition: all 0.35s;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.tag .tagtext, .menu-tag{
+  visibility: hidden;
+  width: 70px;
+  background-color: var(--color-gray);
+  color: hsl(0, 0%, 93%);
+  text-align: center;
+  border-radius: var(--border-radius);
+  padding: 5px 0;
+  position: absolute;
+  opacity: .5;
+  backdrop-filter: blur(20px);
+}
+.tag:hover .tagtext, .menu-item:hover .menu-tag{
+  visibility: visible;
+}
+
+#random-topic {
+  border-collapse: collapse;
+  width: 100%;
+}
+#random-topic img {
+  width: var(--tag-icon-size);
+}
+td {
+  max-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#random-topic td, #random-topic th {
+  padding: 8px;
+}
+#random-topic tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+#random-topic tr:hover {background-color: #ddd;}
+#random-topic tr:first-child {pointer-events: none;}
+#random-topic tr:last-child {border-bottom: 0;}
+#random-topic td:nth-last-child(2), #random-topic td:nth-last-child(3) {text-align: center;}
+
+/* top-left border-radius */
+table tr:first-child th:first-child {
+  border-top-left-radius: 6px;
+}
+
+/* top-right border-radius */
+table tr:first-child th:last-child {
+  border-top-right-radius: 6px;
+}
+
+/* bottom-left border-radius */
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 6px;
+}
+
+/* bottom-right border-radius */
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 6px;
+}
+
+/*Style post page*/
+.posts .post {
+  padding: 1rem;
+  margin: 1rem auto;
+  line-height: 1.5;
+  font-size: .85rem;
+  border-bottom: 1px solid rgb(217, 217, 217);
+}
+.posts .post:last-child {
+  border-bottom: 0;
+}
+
+.posts .post .poster {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.posts .post .user {
+  display: flex;
+  gap: 1rem;
+}
+
+.posts .post-img {
+  overflow: hidden;
+  margin: 0rem 0 0 15rem;
+  padding: 1rem;
+  width: 50%;
+}
+.posts .post-img img{
+  border-radius: var(--border-radius);
+}
+.harsh-tag {
+  color: var(--color-primary);
+}
+.profile-picture {
+  width: var(--icon-size);
+  aspect-ratio: 1/1;
+  border-radius: var(--border-radius-avatar);
+  overflow: hidden;
+  background-color: white !important;
+  border: 2px solid var(--color-primary);
+}
+.profile-picture img:hover {
+  opacity: .6;
+}
+
+.posts .postext {
+  margin: 10px;
+}
+.post p {
+  text-align: center;
+}
+/*Style terms page */
+#content3 {
+  text-align: left;
+}
+
+/* .............Style the Game page............. */
+/* Style gallery page */
+.gallery {
+  width: var(--medium-rem);
+  height: 8rem;
+  display: inline-block;
+  position: relative;
+  align-items: center;
+  top: 5rem;
+  float: left;
+  left: 10rem;
+  margin: 2rem;
+}
+.gallery p {
+  position: relative;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+  width: 6rem;
+  opacity: 0;
+  padding: 10px;
+  text-align: center;
+  border-radius: var(--border-radius);
+  transition: transform 0.5s;
+  z-index: 99;
+}
+.gallery:hover p {
+  opacity: 1;
+  transform: translate3d(120%, -100%, 100px);
+  z-index: 99;
+  box-shadow: 0px 10px 20px -5px rgba(0, 0, 0, 0.75);
+}
+
+.cover-img {
+  width: 80%;
+  border: 2px solid var(--color-primary);
+  padding: .6rem;
+  border-radius: var(--border-radius);
+}
+
+.cover{
+  transition: all 0.5s;
+  width: 70%;
+}
+.gallery:hover .cover {
+  transform: perspective(900px) translateY(10%) rotateX(60deg) translateZ(0) rotateY(0deg);
+}
+
+.display-img {
+  width: 60%;
+  opacity: 0;
+  transition: all 0.5s;
+  background: white !important;
+  border-radius: var(--border-radius);
+}
+.gallery:hover .display-img {
+  opacity: 1;
+  transform: translate3d(-7%, -100%, 100px);
+}
+
+/*Style random game page*/
+#button {
+  width: 40%;
+  background-color: transparent;
+  position: absolute;
+  left: 35%;
+  top: 40%;
+}
+
+#button img{
+  width: 65%;
+  animation: fade-down .5s;
+}
+#output {
+  position: absolute;
+  top: 15%;
+  left: 30%;
+  display: block;
+  text-align: center;
+  background-color: white !important;
+  color: black;
+  padding: 12px;
+  box-shadow: 0 -4px white, 0 -8px black, 4px 0 white, 4px -4px black, 8px 0 black, 0 4px white, 0 8px black, -4px 0 white, -4px 4px black, -8px 0 black, -4px -4px black, 4px 4px black;
+  width: var(--large-rem);
+  animation: fade-down .5s;
+  font-family: myFirstFont01;
+  font-size: var(--medium-fonts);
+}
+
+/*............. Style the Join page .............*/
+.form-structor .join {
+  position: relative;
+  left: 18%;
+  width: 65%;
+  top: 3rem;
+  text-align: center;
+}
+
+.form-structor .join .form-holder .input, .form-holder textarea, .form-holder .chromo, select {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+  display: block;
+  height: 40px;
+  text-align: center;
+  line-height: 30px;
+  padding: 8px 15px;
+  color: var(--color-black);
+  border-bottom: 1px solid #eee;
+  width: 100%;
+  background-color: white !important;
+  font-size: var(--small-fonts);
+}
+
+::placeholder, select, .form-holder label {
+  font-size: var(--small-fonts);
+}
+
+.form-holder textarea {
+  height: 130px;
+  border-bottom: 1px solid #eee;
+  color: var(--color-black);
+  resize: none;
+}
+
+.form-structor .join .form-holder .input::placeholder, ::placeholder {
+  color: #dddddd;
+}
+.terms {
+  margin-top: 1rem;
+}
+.terms h2{
+  color: var(--color-black);
+}
+
+.terms input[type="checkbox"],  .chromo input[type="radio"]{
+  display: inline;
+}
+
+.form-structor .join .submit-btn {
+  font-size: var(--small-fonts);
+  color: var(--color-black);
+  border: 2px solid var(--color-primary);
+  border-radius: 30px;
+  display: block;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form-structor .join .submit-btn:hover {
+  display: block;
+  transition: all 0.3s ease;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+}
+/* style map */
+.map {
+  padding: 3vw;
+  text-align: center;
+}
+
+/*....... Style the Submit page .......*/
+.submit-succ {
+  font-size: var(--medium-fonts);
+  top: var(--small-rem);
+  left: 0%;
+  position: relative;
+  top: 34%;
+  justify-content: center;
+  text-align: center;
+}
+.jump p{
+  font-size: var(--small-fonts);
+}
+
+/* ----------------Main Right Start---------------- */
+.main-right {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: block;
+  width: 22%;
+  float: left;
+}
+
+/* callout box*/
+.callout {
+  background: var(--color-white);
+  border-radius: var(--border-radius);
+  padding: 10px;
+  width: var(--small-rem);
+  line-height: 1.5vw;
+  position: fixed;
+  right: 2%;
+  top: 32vw;
+  font-family: myFirstFont03;
+  box-shadow: 0px 20px 30px -10px rgba(158, 158, 158, 0.75);
+}
+
+.callout p {
+  margin-top: 8px;
+  font-size: var(--small-fonts);
+}
+.callout button {
+  text-decoration: underline;
+  background-color: var(--color-white);
+  padding: .8rem;
+  font-family: myFirstFont01;
+  font-size: 1.3rem;
+  color: var(--color-dark);
+}
+
+.callout button:hover {
+  color: var(--color-primary);
+}
+
+.closebtn {
+  position: absolute;
+  top: .5rem;
+  right: 6%;
+  font-size: var(--medium-fonts);
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: var(--color-light);
+}
+
+/* .............Footer............. */
+footer {
+  position: fixed;
+  bottom: 0rem;
+  width: 100%;
+  height: 2.5rem;
+  padding: .8rem;
+  display: block;
+  text-align: center;
+  background-color: var(--color-primary);
+}
+
+.switch {
+  position: fixed;
+  bottom: 0rem;
+  left: 4.5rem;
+  background-color: var(--color-primary);
+  border-radius: var(--border-radius-avatar);
+  z-index: 3;
+  color: var(--color-light);
+}
+
+.switch img{
+  width: var(--icon-size);
+  border-radius: var(--border-radius-avatar);
+}
+
+/* tagline */
+.tagline {
+  position: fixed;
+  right: 42%;
+  bottom: 0rem;
+  display: block;
+  color: var(--color-black);
+}
+
+.headline {
+  color: var(--color-black);
+}
+
+/* ================== Media Queryes==================*/
+/* MAX WIDTH(1200PX) */
+@media only screen and (max-width:1200px) {
+  .main-middle {
+    z-index: -1;
+    height: 100%;
+  }
+  /* MAX WIDTH(600PX) */
+  @media only screen and (max-width:600px){
+    #content1, #content2, #content3 {
+      height: 100%;
+      font-size: var(--medium-fonts);
+    }
+  }
+}
