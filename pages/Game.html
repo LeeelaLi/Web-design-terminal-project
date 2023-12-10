@@ -1,0 +1,146 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <!--  tells the browser to use the utf-8 character encoding. -->
+  <meta charset="UTF-8">
+  <!--  This defines the title of this website.  -->
+  <title>Game</title>
+  <!--  This defines the implement of SEO.  -->
+  <meta name="description" content="This is a communication platform that aims to provide a women-friendly environment.">
+  <meta name="og:title" property="og:title" content="This is a communication platform that aims to provide a women-friendly environment.">
+  <link rel="canonical" href="link">
+  <!--Prevent a page on my site from being indexed by all search engines that support noindex rules-->
+  <meta name="robots" content="noindex">
+  <!-- Using meta to identify web pages containing explicit content -->
+  <meta name="rating" content="adult">
+  <!-- link tag for styles -->
+  <link rel="stylesheet" href="../css/style.css">
+  <!-- This defines the web page icon that represents this website. -->
+  <link rel="icon" type="image/404-icon" href="../images/svg/game.png">
+  <!-- link tag for random game -->
+  <script src="https://code.jquery.com/jquery-2.2.3.min.js" ></script>
+</head> 
+<body> 
+  <main>
+    <div class="main-container">
+      <!-- Main Left -->
+      <div class="main-left">
+        <!-- page icon -->
+        <a rel="ugc, sponsored" class="menu-item" id="index" href="../index.html">
+          <img src="../images/svg/logo.png" alt="">
+          <h4>setter<span><b>Catter</b></span></h4>
+        </a>
+        <a rel="ugc, sponsored" class="menu-item active" id="game" href="./Game.html">
+          <img src="../images/svg/game.png" alt="">
+          <h4>Game</h4>
+        </a>
+        <a rel="ugc, sponsored" class="menu-item" href="./Join.html">
+          <img src="../images/svg/join.png" alt="">
+          <h4>Join</h4>
+        </a>
+      </div>
+      <!-- Main Middle -->
+      <div class="main-middle">  
+        <!-- style main middle part of the page -->
+        <div class="forum-container">
+          <div class="tab_container">
+            <input id="tab1" type="radio" name="csrf-token" value="OGI4M4NmDRjN2QhMWYMmZlYWEwYzU1VhM2JmYWQQwODE4OwMTNGYxY2NTljJE1ZijJjZDDZMGYwMGEwOA==" checked>
+            <label for="tab1" id="tab-label-1"><span>Gallery</span></label>
+            <input id="tab2" type="radio" name="csrf-token" value="WEwYzU1YWQwMTNGYxYjJiMVhM2JmEwOA=4MjJjWY4ZDE1ZDGIZlYGZMGYwMONmQwODE4ODRjN2Q2NTlhMm=">
+            <label for="tab2" id="tab-label-2"><span>Game</span></label>
+            <!-- gallery page -->
+            <div id="content1" class="tab-content">
+              <div class="gallery">
+                <!-- cover image-->
+                <div class="cover">
+                  <img src="../images/img/card-cowcat.png" class="cover-img" alt="cowcat">
+                </div>
+                <!-- when hover the cover images, text and other images will display.-->
+                <p>This is cow cat.</p>
+                <img src="../images/img/card-cat-cow.png" class="display-img" alt="game">
+              </div>
+              <div class="gallery">
+                <!-- cover image-->
+                <div class="cover">
+                  <img src="../images/img/card-gingercat.png" class="cover-img" alt="cowcat">
+                </div>
+                <!-- when hover the cover images, text and other images will display.-->
+                <p>This is ginger cat.</p>
+                <img src="../images/img/card-cat-ginger.png" class="display-img" alt="game">
+              </div>
+              <div class="gallery">
+                <!-- cover image-->
+                <div class="cover">
+                  <img src="../images/img/card-siamcat.png" class="cover-img" alt="cowcat">
+                </div>
+                <!-- when hover the cover images, text and other images will display.-->
+                <p>This is siamese cat.</p>
+                <img src="../images/img/card-cat-siam.png" class="display-img" alt="game">
+              </div>
+              <div class="gallery">
+                <!-- cover image-->
+                <div class="cover">
+                  <img src="../images/img/card-blackcat.png" class="cover-img" alt="cowcat">
+                </div>
+                <!-- when hover the cover images, text and other images will display.-->
+                <p>This is a mystery.</p>
+                <img src="../images/img/card-cat-black.png" class="display-img" alt="game">
+              </div>
+            </div>
+            <!-- random game page -->
+            <div id="content2" class="tab-content">
+              <!-- the dialog which will output random text.-->
+              <div id="output"><p>Don't click me.<br>I can't talk.</p></div>
+              <!-- when click the button, the dialog will output random text.-->
+              <button id="button"><img src="../images/img/card-cat-mystery.png" alt=""></button>    
+            </div>
+          </div>
+        </div>
+        <!-- style the search bar -->
+        <form role="search" id="searchbar" class="search-bar" method="post">
+          <input type="search" placeholder="Search..." id="message-search" name="csrf-token" aria-label="Search through google">
+        </form>
+      </div>
+      <!-- Main Right -->
+      <div class="main-right">               
+        <!-- callout box-->
+        <div class="callout">
+          <!-- callout box title-->
+          <div class="callout-header">
+            <h3>Tips</h3>
+          </div>
+          <!-- callout close button-->
+          <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+          <!-- callout content-->
+          <div class="callout-container">
+            <!-- callout content-display -->
+            <p>Margaret Hamilton dvaput je spasila projekt Apollo od rušenja letjelice i brisanja podataka.</p>
+            <!-- callout content-translation -->
+            <button type="button" id="gameBtn">Translate</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <!-- light/dark mode switch -->
+    <button class="switch">
+      <img src="../images/svg/switch.png"  alt="">
+    </button>
+    <!-- footer -->
+    <div class="tagline">
+      <p>&copy;website design and icons: made by</p> 
+        <div class="headline">
+          <p data-value="Leelaa Lee">Chuntao Li</p>
+        </div>
+    </div>
+  </footer>
+  <!-- Custom JS LINK -->
+  <script src="../js/style.js"></script>
+  <script>
+    document.getElementById("gameBtn").addEventListener("click", function() {
+      alert("Margaret Hamilton twice saved the Project Apollo from crashing the spacecraft and erasing its data.");
+    });
+  </script>
+</body>
+</html>
